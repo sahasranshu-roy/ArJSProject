@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    <script src='vendor/ar.js/aframe/build/aframe-ar.js'></script>
+    <script>ARjs.Context.baseURL = 'vendor/ar.js/three.js/'</script>
+
+    <script src="./src/gps-camera-debug.js"></script>
+    <script src="./src/gps-camera-position.js"></script>
+    <script src="./src/gps-entity-place.js"></script>
+
+    <style>
+        .head {
+            text-align: center;
+        }
+
+        .meeting-room {
+            text-align: center;
+            height: 10%;
+            background: #033a69e0;
+            color: #fff;
+            padding: 10px;
+            margin-top: 5%;
+        }
+
+        .total-view {
+            margin-top: 3%;
+        }
+
+        .meeting-5-rooms {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a-scene embedded arjs='sourceType: webcam;' gps-camera-debug>
+    </a-scene>
+    <script src="./src/createEntities.js"></script>
+    <script src="./src/loadAugmentedMaps.js"></script>
+    <script src="./src/main.js"></script>
+    <script src="./src/load360map.js"></script>
+    <script src="./src/animationEvents.js"></script>
+</body>
+
+
+
+</html>

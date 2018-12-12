@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+	<!-- include ar.js for aframe -->
+	<script src='vendor/ar.js/aframe/build/aframe-ar.js'></script>
+	<script>ARjs.Context.baseURL = 'vendor/ar.js/three.js/'</script>
+	<!-- include gps-ar.js -->
+
+	<script src="../src/gps-camera-debug.js"></script>
+	<script src="../src/gps-camera-position.js"></script>
+	<script src="../src/gps-entity-place.js"></script>
+</head>
+
+
+<body style='margin: 0px; overflow: hidden;'>
+	<a-scene embedded arjs='sourceType: webcam;'>
+
+		<a-assets>
+			<a-asset-item id="arrow" src="../models/Drone/flying sacuer.gltf">
+		</a-assets>
+
+		<a-entity gltf-model="#arrow" id="entity-0" position="0 0 -10" scale="3 3 3" visible="true">
+			<a-animation attribute="position" id="firstAnimation" dur="8000" from="0 0 -10" to="0 0 -50"></a-animation>
+			<a-animation attribute="position" id="secondAnimation" dur="3000" from="0 0 -50" to="-15 0 -70" begin="done-1"></a-animation>
+		</a-entity>
+
+		<a-entity gltf-model="#arrow" id="entity-2" scale="3 3 3" visible="false">
+			<a-animation attribute="rotation" begin="done-1" dur="3000" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+			<a-animation attribute="position" begin="done-1" dur="8000" from="0 0 -50" to="0 0 -50"></a-animation>
+		</a-entity>
+
+		<a-camera id="camera" gps-camera-debug></a-camera>
+	</a-scene>
+
+	<!-- <script src="../src/tracking.js"></script> -->
+</body>
+
+</html>
